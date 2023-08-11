@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+  </head>
+  <body>
+    <h1>naek's gallery</h1>
+    {% for images in gallery %}
+    <h2>{{ images[0] }}</h2>
+      <div class="row">
+      {% for image in images[1] %}
+    <img src="{{ image.url }}" alt="{{ image.name }}">
+      {% endfor %}
+    </div>
+    {% endfor %}
+  </body>
+</html>
